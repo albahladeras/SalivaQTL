@@ -1,9 +1,9 @@
 ## Quality control of genotype data for the SalivaQTL project
 
 ### 1. Filter SNPs
--MAF 0.01
--HWE 1e-06
--Call rate 0.05
+MAF 0.01
+HWE 1e-06
+Call rate 0.05
 ```
 plink
   --bfile saliva_samples \
@@ -15,8 +15,8 @@ plink
 ```
 
 ### 2 Filter samples
--More than 4SD from the mean of heterozigosity
--Call rate 10%
+More than 4SD from the mean of heterozigosity
+Call rate 10%
 
 1. Heterozigosity
 1.1 Create the .imiss and .het files with plink
