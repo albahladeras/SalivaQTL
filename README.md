@@ -1,7 +1,7 @@
 ## Quality control of genotype data for the SalivaQTL project
 
 ### 1. Filter SNPs
-    -MAF 0.01
+-MAF 0.01
 -HWE 1e-06
 -Call rate 0.05
 ```
@@ -15,11 +15,11 @@ plink
 ```
 
 ### 2 Filter samples
-      -More than 4SD from the mean of heterozigosity
-      -Call rate 10%
+-More than 4SD from the mean of heterozigosity
+-Call rate 10%
 
 1. Heterozigosity
-      1.1 Create the .imiss and .het files with plink
+1.1 Create the .imiss and .het files with plink
 ```
 plink
   --bfile saliva_samples_maf001_hwe005_hwe106 \
@@ -27,12 +27,12 @@ plink
   --het \
   --out saliva_samples_maf001_hwe005_hwe106
 ```
-      1.2 Run the calculate_heterozigosity.R script in terminal
+1.2 Run the calculate_heterozigosity.R script in terminal
 ```
 Rscript calculate_heterozigosity.R saliva_samples_maf001_hwe005_hwe106.imiss \
 saliva_samples_maf001_hwe005_hwe106.het
 ```
-      1.3 Remove samples with plink
+1.3 Remove samples with plink
 ```
 plink
   --bfile saliva_samples_maf001_hwe005_hwe106 \
@@ -50,14 +50,14 @@ plink
 ```
 
 ### 3. Prepare files for imputation
-      1. Create the .frq file with plink
+1. Create the .frq file with plink
 ```
 plink
   --bfile saliva_samples_maf001_hwe005_hwe106_het_miss010 \
   --freq \
   --out saliva_samples_maf001_hwe005_hwe106_het_miss010
 ```
-      2. Execute Will Rayner preimputation script
+2. Execute Will Rayner preimputation script
 ```
 perl HRC-1000G-check-bim.pl \
   -b saliva_samples_maf001_hwe005_hwe106_het_miss010.bim \
@@ -71,21 +71,21 @@ perl HRC-1000G-check-bim.pl \
 ```
 sh Run-plink.sh
 ```
-      3. Rename and compress files 
+3. Rename and compress files 
 ```
 for i in {1..23};
 do
   vcf-sort saliva_samples_maf001_hwe005_hwe106_het_miss010-updated-chr${i}.vcf | bgzip -c > $i.vcf.gz ;
 done
 ```
-      4. Impute data using 1000G as reference panel
+4. Impute data using 1000G as reference panel
 
 ### 4. Quality control of imputed data
 -RsQ > 0.9
 -MAF > 0.01
 -HWE 0.05
 
-      1. Concat the imputed files
+1. Concat the imputed files
 ```
 for i in {1..22};
 do
@@ -101,14 +101,14 @@ bcftools concat -f tmp-concat.txt \
 -o all_chr_imputed_raw.vcf.gz \
 -Oz
 ```
-      2. Filter SNPs by rsq09
+2. Filter SNPs by rsq09
 ```
 bcftools filter -i 'R2>0.9' \
 -o all_chr_imputed_rsq09.vcf \
 -Ov \
 all_chr_imputed_raw.vcf.gz
 ```
-      3. Filter by MAF 0.01 and HWE 0.05
+3. Filter by MAF 0.01 and HWE 0.05
 ```
 plink
   --vcf all_chr_imputed_rsq09.vcf \
