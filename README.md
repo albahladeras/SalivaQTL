@@ -119,7 +119,6 @@ plink
   --out all_chr_imputed_rsq09_maf001_hwe005
 ```
 ## Quality control of methylation data 
-
 Execute the [qc_methylation_data.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/qc_methylation_data.R) script.
 
 ### 1. CpGs QC:
@@ -130,19 +129,23 @@ Execute the [qc_methylation_data.R](https://github.com/albahladeras/SalivaQTL_QC
 -Multi-hit probes are removed: [Nordlund et al 2013](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2013-14-9-r105) and [McCartney et al 2016](https://www.sciencedirect.com/science/article/pii/S221359601630071X?via%3Dihub)  
 -Probes located in chromosome X and Y are removed  
 
-### 2. Sample QC:  
+### 2. Sample QC: 
 -Samples with a fraction of failed probes higher tan 0.05 are removed  
 
 ### 3. Normalization methods: 
   -Functional and Noob Normalization  
   -BMIQ Normalization  
+  
 ### 4. Batch correction:
   -Combat  
+  
 ### 5. Outliers treatment:  
   -Winsorization: pct = 0.005
 
 ## Quality control of expression data
 
 ### 1. Concat FASTQ files from different lanes:
-
 [concat_lanes.sh script](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/concat_lanes.sh)
+
+### 2. Preprocessing with Fastp
+[fastp.sh](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/fastp.sh)
