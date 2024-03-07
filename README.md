@@ -150,3 +150,7 @@ plink
 
 ### 2. Preprocessing with Fastp
 [fastp.sh](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/fastp.sh)
+
+### 3. Splice-aware mapping to genome
+We used STAR (Spliced Transcripts Alignment to a Reference) software and UCSC hg19 reference genome
+
