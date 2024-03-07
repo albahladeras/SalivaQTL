@@ -1,6 +1,6 @@
 ## Quality control of genotype data for the SalivaQTL project
 
-### 1. Filter SNPs
+### 1. Variant QC
 -MAF 0.01
 -HWE 1e-06
 -Call rate 0.05
@@ -14,7 +14,7 @@ plink
   --out saliva_samples_maf001_hwe005_hwe106
 ```
 
-### 2 Filter samples
+### 2 Sample QC
 -More than 4SD from the mean of heterozigosity
 -Call rate 10%
 
@@ -118,3 +118,18 @@ plink
   --make-bed \
   --out all_chr_imputed_rsq09_maf001_hwe005
 ```
+## Quality control of methylation data 
+
+Execute the qc_methylation_data.R script.
+
+### CpGs QC:
+
+### Sample QC:
+
+### Normalization methods: 
+  -Functional and Noob Normalization
+  -BMIQ Normalization
+### Batch correction:
+  -Combat
+### Outliers treatment:
+  -Winsorization: pct = 0.005
