@@ -15,7 +15,7 @@ plink
 ```
 
 ### 2 Sample QC
--More than 4SD from the mean of heterozigosity
+-More than 4SD from the mean of heterozigosity  
 -Call rate 10%
 
 1. Heterozigosity
@@ -81,8 +81,8 @@ done
 4. Impute data using 1000G as reference panel
 
 ### 4. Quality control of imputed data
--RsQ > 0.9
--MAF > 0.01
+-RsQ > 0.9  
+-MAF > 0.01  
 -HWE 0.05
 
 1. Concat the imputed files
@@ -123,13 +123,20 @@ plink
 Execute the qc_methylation_data.R script.
 
 ### CpGs QC:
+-Detection P-value < 0.01  
+-Bead number 3 in at least 5% of samples per probe  
+-All non-CpG probes are removed  
+-SNP-related probes are removed: Zhou et al 2016 () and McCartney et al 2016 ()
+-Multi-hit probes are removed: Nordlund et al 2013 () and McCartney et al 2016 ()   
+-Probes located in chromosome X and Y are removed.
 
-### Sample QC:
+### Sample QC:  
+-Samples with a fraction of failed probes higher tan 0.05 are removed 
 
 ### Normalization methods: 
-  -Functional and Noob Normalization
-  -BMIQ Normalization
+  -Functional and Noob Normalization  
+  -BMIQ Normalization  
 ### Batch correction:
-  -Combat
-### Outliers treatment:
+  -Combat  
+### Outliers treatment:  
   -Winsorization: pct = 0.005
