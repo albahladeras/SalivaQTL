@@ -1,8 +1,8 @@
 ## Quality control of genotype data for the SalivaQTL project
 
 ### 1. Variant QC
--MAF 0.01
--HWE 1e-06
+-MAF 0.01  
+-HWE 1e-06  
 -Call rate 0.05
 ```
 plink
