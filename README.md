@@ -120,7 +120,7 @@ plink
 ```
 ## Quality control of methylation data 
 
-Execute the qc_methylation_data.R script.
+Execute the [qc_methylation_data.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/qc_methylation_data.R) script.
 
 ### CpGs QC:
 -Detection P-value < 0.01  
