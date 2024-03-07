@@ -140,3 +140,9 @@ Execute the [qc_methylation_data.R](https://github.com/albahladeras/SalivaQTL_QC
   -Combat  
 ### 5. Outliers treatment:  
   -Winsorization: pct = 0.005
+
+## Quality control of expression data
+
+### 1. Concat FASTQ files from different lanes:
+
+[concat_lanes.sh script](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/concat_lanes.sh)
