@@ -126,12 +126,12 @@ Execute the [qc_methylation_data.R](https://github.com/albahladeras/SalivaQTL_QC
 -Detection P-value < 0.01  
 -Bead number 3 in at least 5% of samples per probe  
 -All non-CpG probes are removed  
--SNP-related probes are removed: [Zhou et al 2016](https://academic.oup.com/nar/article-lookup/doi/10.1093/nar/gkw967) and McCartney et al 2016](https://www.sciencedirect.com/science/article/pii/S221359601630071X?via%3Dihub)
--Multi-hit probes are removed: [Nordlund et al 2013](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2013-14-9-r105) and [McCartney et al 2016](https://www.sciencedirect.com/science/article/pii/S221359601630071X?via%3Dihub)    
--Probes located in chromosome X and Y are removed.
+-SNP-related probes are removed: [Zhou et al 2016](https://academic.oup.com/nar/article-lookup/doi/10.1093/nar/gkw967) and [McCartney et al 2016](https://www.sciencedirect.com/science/article/pii/S221359601630071X?via%3Dihub)  
+-Multi-hit probes are removed: [Nordlund et al 2013](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2013-14-9-r105) and [McCartney et al 2016](https://www.sciencedirect.com/science/article/pii/S221359601630071X?via%3Dihub)  
+-Probes located in chromosome X and Y are removed  
 
 ### Sample QC:  
--Samples with a fraction of failed probes higher tan 0.05 are removed 
+-Samples with a fraction of failed probes higher tan 0.05 are removed  
 
 ### Normalization methods: 
   -Functional and Noob Normalization  
