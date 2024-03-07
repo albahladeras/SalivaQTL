@@ -119,7 +119,7 @@ plink
   --out all_chr_imputed_rsq09_maf001_hwe005
 ```
 ## Quality control of methylation data 
-Execute the [qc_methylation_data.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/qc_methylation_data.R) script.
+[qc_methylation_data.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/qc_methylation_data.R).
 
 ### 1. CpGs QC:
 -Detection P-value < 0.01  
@@ -145,7 +145,7 @@ Execute the [qc_methylation_data.R](https://github.com/albahladeras/SalivaQTL_QC
 ## Quality control of expression data
 
 ### 1. Concat FASTQ files from different lanes:
-[concat_lanes.sh script](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/concat_lanes.sh)
+[concat_lanes.sh](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/concat_lanes.sh)
 
 ### 2. Preprocessing with Fastp
 [fastp.sh](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/fastp.sh)
