@@ -14,7 +14,7 @@ library(data.table)
 library(PACEanalysis)
 
 #Filter samples
-myLoad <- champ.load(directory = "/data/saliva/meth/MET2022-310-014/idats", method="minfi",
+myLoad <- champ.load(directory = "/data/saliva/meth", method="minfi",
                      methValue="B",
                      autoimpute=FALSE,
                      filterDetP=T,
