@@ -27,7 +27,7 @@ plink
   --het \
   --out saliva_samples_maf001_hwe005_hwe106
 ```
-1.2 Run the calculate_heterozigosity.R script in terminal
+1.2 Run the [calculate_heterozigosity.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/calculate_heterozigosity.R) script in terminal
 ```
 Rscript calculate_heterozigosity.R saliva_samples_maf001_hwe005_hwe106.imiss \
 saliva_samples_maf001_hwe005_hwe106.het
