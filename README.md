@@ -57,7 +57,7 @@ plink
   --freq \
   --out saliva_samples_maf001_hwe005_hwe106_het_miss010
 ```
-2. Execute Will Rayner preimputation script (https://www.chg.ox.ac.uk/~wrayner/tools/)
+2. Execute [Will Rayner preimputation script](https://www.chg.ox.ac.uk/~wrayner/tools/)
 ```
 perl HRC-1000G-check-bim.pl \
   -b saliva_samples_maf001_hwe005_hwe106_het_miss010.bim \
