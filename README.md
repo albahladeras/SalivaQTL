@@ -1,4 +1,5 @@
 ## Quality control of genotype data for the SalivaQTL project
+In this GitHub repository, you will find the protocol elaborated by the Immunogenetics Research Lab (IRLab) from the University of the Basque Country (UPV/EHU), to perform the quality control of genotype, methylation and expression data used in the SalivaQTL project.
 
 ### 1. Variant QC
 -MAF 0.01  
