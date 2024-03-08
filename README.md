@@ -121,6 +121,15 @@ plink
   --keep-allele-order \
   --make-bed \
   --out all_chr_imputed_rsq09_maf001_hwe005
+
+4. Remove sexual chromosomes
+```
+plink \
+  --bfile all_chr_imputed_rsq09_maf001_hwe005 \
+  --chr 1-22 \
+  --keep-allele-order \
+  --make-bed \
+  --out all_chr_imputed_rsq09_maf001_hwe005_chr1_22
 ```
 ## Methylation data 
 
@@ -147,9 +156,31 @@ plink
   
 #### 5. Outliers treatment:  
   -Winsorization: pct = 0.005  
-  
-### Create BED File
+
+## Prepare files for mQTL analysis  
+
+### 1. Create BED File
 [create_methylation_bedfile.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/create_methylation_bedfile.R)
+
+### 2. Make sure the same samples are present in the methylation and genotype files
+Subset from BED and plink files  
+
+### 3. Make sure the samples are in the same order in both files
+
+### 4. Prepare covariates file
+  -5 genetic principal components  
+  -Age
+  -Sex  
+  -Metilation principal components
+  -Genetic Relatedness Matrix
+
+#### Calculate the genetic principal components using PC-AiR
+
+
+
+  
+
+
 
 ## Quality control of expression data
 
