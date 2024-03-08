@@ -165,12 +165,14 @@ Subset from BED and plink files
 
 ### 3. Make sure the samples are in the same order in both files
 
-### 4. Prepare covariates file
+### 4. Inverse normal transformation of methylation data
+
+### 5. Prepare covariates file
   -5 genetic principal components  
-  -Age
+  -Age  
   -Sex  
-  -Metilation principal components
-  -Genetic Relatedness Matrix
+  -Metilation principal components  
+  -Genetic Relatedness Matrix  
 
 #### Calculate the genetic principal components and the genetic relatedness matrix
 [pc_air_pc_relate.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/pc_air_pc_relate.R)
