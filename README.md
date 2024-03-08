@@ -2,8 +2,6 @@
 In this GitHub repository, you will find the protocol elaborated by the Immunogenetics Research Lab (IRLab) from the University of the Basque Country (UPV/EHU), to perform the quality control of genotype, methylation and expression data and mQTl and eQTL analyses for the SalivaQTL project.
 
 ## Quality control of genotype data 
-
-
 ### 1. Variant QC
 -MAF 0.01  
 -HWE 1e-06  
@@ -121,7 +119,7 @@ plink
   --keep-allele-order \
   --make-bed \
   --out all_chr_imputed_rsq09_maf001_hwe005
-
+```
 4. Remove sexual chromosomes
 ```
 plink \
@@ -131,8 +129,8 @@ plink \
   --make-bed \
   --out all_chr_imputed_rsq09_maf001_hwe005_chr1_22
 ```
-## Methylation data 
 
+## Methylation data 
 ### Quality control  
 [qc_methylation_data.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/qc_methylation_data.R).
 
