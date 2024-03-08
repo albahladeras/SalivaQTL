@@ -1,5 +1,8 @@
-## Quality control of genotype data for the SalivaQTL project
-In this GitHub repository, you will find the protocol elaborated by the Immunogenetics Research Lab (IRLab) from the University of the Basque Country (UPV/EHU), to perform the quality control of genotype, methylation and expression data used in the SalivaQTL project.
+# Pipeline of mQTL and eQTL analyses for the SalivaQTL project
+In this GitHub repository, you will find the protocol elaborated by the Immunogenetics Research Lab (IRLab) from the University of the Basque Country (UPV/EHU), to perform the quality control of genotype, methylation and expression data and mQTl and eQTL analyses for the SalivaQTL project.
+
+## Quality control of genotype data 
+
 
 ### 1. Variant QC
 -MAF 0.01  
@@ -119,10 +122,12 @@ plink
   --make-bed \
   --out all_chr_imputed_rsq09_maf001_hwe005
 ```
-## Quality control of methylation data 
+## Methylation data 
+
+### Quality control  
 [qc_methylation_data.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/qc_methylation_data.R).
 
-### 1. CpGs QC:
+#### 1. CpGs QC:
 -Detection P-value < 0.01  
 -Bead number 3 in at least 5% of samples per probe  
 -All non-CpG probes are removed  
@@ -130,18 +135,21 @@ plink
 -Multi-hit probes are removed: [Nordlund et al 2013](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2013-14-9-r105) and [McCartney et al 2016](https://www.sciencedirect.com/science/article/pii/S221359601630071X?via%3Dihub)  
 -Probes located in chromosome X and Y are removed  
 
-### 2. Sample QC: 
+#### 2. Sample QC: 
 -Samples with a fraction of failed probes higher tan 0.05 are removed  
 
-### 3. Normalization methods: 
+#### 3. Normalization methods: 
   -Functional and Noob Normalization  
   -BMIQ Normalization  
   
-### 4. Batch correction:
+#### 4. Batch correction:
   -Combat  
   
-### 5. Outliers treatment:  
-  -Winsorization: pct = 0.005
+#### 5. Outliers treatment:  
+  -Winsorization: pct = 0.005  
+  
+### Create BED File
+
 
 ## Quality control of expression data
 
