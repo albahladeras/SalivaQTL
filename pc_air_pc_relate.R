@@ -12,8 +12,8 @@ library(ggplot2)
 # PLINK files into a GDS file.
 
 gdsfile <- snpgdsBED2GDS(bed.fn = "../all_chr_imputed_rsq09_maf001_hwe005_chr1_22_common_methyl.bed", 
-                         bim.fn = "../all_chr_imputed_rsq09_maf001_hwe005_chr1_22_common_methyl.bim" 
-                         fam.fn = "../all_chr_imputed_rsq09_maf001_hwe005_chr1_22_common_methyl.fam" 
+                         bim.fn = "../all_chr_imputed_rsq09_maf001_hwe005_chr1_22_common_methyl.bim",
+                         fam.fn = "../all_chr_imputed_rsq09_maf001_hwe005_chr1_22_common_methyl.fam",
                          out.gdsfn = "genotype.gds")
 
 # read in GDS data
@@ -22,7 +22,7 @@ snpset <- snpgdsLDpruning(gds, method="corr", slide.max.bp=10e6,
                           ld.threshold=sqrt(0.1), verbose=FALSE)
 pruned <- unlist(snpset, use.names=FALSE)
 
-# 3.2 Pairwise Measures of Ancestry Divergence
+# Pairwise Measures of Ancestry Divergence
 # create matrix of KING estimates
 
 king <- snpgdsIBDKING(gds)
@@ -33,7 +33,7 @@ snpgdsClose(gds)
 
 kinship <- snpgdsIBDSelection(king)
 
-# 3.3 Running PC-AiR
+# Running PC-AiR
 saliva_geno <- GdsGenotypeReader(filename = "genotype.gds")
 # create a GenotypeData class object
 saliva_genoData <- GenotypeData(saliva_geno)
