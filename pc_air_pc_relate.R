@@ -21,10 +21,6 @@ gds <- snpgdsOpen(gdsfile)
 snpset <- snpgdsLDpruning(gds, method="corr", slide.max.bp=10e6, 
                           ld.threshold=sqrt(0.1), verbose=FALSE)
 pruned <- unlist(snpset, use.names=FALSE)
-length(pruned) #86153
-
-head(pruned)
-
 
 # 3.2 Pairwise Measures of Ancestry Divergence
 # create matrix of KING estimates
@@ -36,15 +32,6 @@ dimnames(kingMat) <- list(king$sample.id, king$sample.id)
 snpgdsClose(gds)
 
 kinship <- snpgdsIBDSelection(king)
-head(kinship)
-
-kinship_plot <- ggplot(kinship, aes(IBS0, kinship)) +
-  geom_hline(yintercept=2^(-seq(3,9,2)/2), linetype="dashed", color="grey") +
-  geom_point(alpha=0.5) +
-  ylab("kinship estimate") +
-  theme_bw()
-
-ggsave(kinship_plot, filename = "kinship_plot.png")
 
 # 3.3 Running PC-AiR
 saliva_geno <- GdsGenotypeReader(filename = "genotype.gds")
