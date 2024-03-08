@@ -166,7 +166,7 @@ Subset from BED and plink files
 ### 3. Make sure the samples are in the same order in both files
 
 ### 4. Inverse normal transformation of methylation data
-
+[rnt_methylation.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/rnt_methylation.R)
 ### 5. Prepare covariates file
   -5 genetic principal components  
   -Age  
