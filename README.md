@@ -149,7 +149,7 @@ plink
   -Winsorization: pct = 0.005  
   
 ### Create BED File
-
+[create_methylation_bedfile.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/create_methylation_bedfile.R)
 
 ## Quality control of expression data
 
