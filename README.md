@@ -213,10 +213,14 @@ We used STAR (Spliced Transcripts Alignment to a Reference) software and UCSC hg
 We used StringTie software
 [stringtie.sh](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/stringtie.sh)
 
-
-### 5. Sample and gene filtering
+### 5. Sample and gene filtering and TMM transformation
 -Samples with more than 5M uniquely mapped reads were selected.  
 -Genes with ≥ 6 reads in ≥ 20% of samples were selected.  
+-Read counts were normalized between samples using TMM
+[gene_sample_qc_tmm.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/gene_sample_qc_tmm.R)
+
+### 6. Inverse normal transformation across samples
+
 
 ## Prepare files for eQTL analysis  
 
