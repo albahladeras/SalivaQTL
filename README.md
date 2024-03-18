@@ -207,9 +207,14 @@ apex cis \
 
 ### 3. Splice-aware mapping to genome
 We used STAR (Spliced Transcripts Alignment to a Reference) software and UCSC hg19 reference genome  
-[alignment.sh](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/alignment.sh)
+[alignment.sh](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/alignment.sh)  
 
-### 4. Sample and gene filtering
+### 4. Transcript assembly and quantification
+We used StringTie software
+[stringtie.sh](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/stringtie.sh)
+
+
+### 5. Sample and gene filtering
 -Samples with more than 5M uniquely mapped reads were selected.  
 -Genes with ≥ 6 reads in ≥ 20% of samples were selected.  
 
