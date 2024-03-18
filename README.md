@@ -206,5 +206,10 @@ apex cis \
 [fastp.sh](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/fastp.sh)
 
 ### 3. Splice-aware mapping to genome
-We used STAR (Spliced Transcripts Alignment to a Reference) software and UCSC hg19 reference genome
+We used STAR (Spliced Transcripts Alignment to a Reference) software and UCSC hg19 reference genome  
+
+### 4. Sample and gene filtering
+-Samples with more than 5M uniquely mapped reads were selected.  
+-Genes with ≥ 6 reads in ≥ 20% of samples were selected.
+-Expression values for each gene were inverse normal transformed across samples
 
