@@ -216,11 +216,8 @@ We used StringTie software
 ### 5. Sample and gene filtering and TMM transformation
 -Samples with more than 5M uniquely mapped reads were selected.  
 -Genes with ≥ 6 reads in ≥ 20% of samples were selected.  
--Read counts were normalized between samples using TMM
+-Read counts were normalized between samples using TMM  
 [gene_sample_qc_tmm.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/gene_sample_qc_tmm.R)
-
-### 6. Inverse normal transformation across samples
-
 
 ## Prepare files for eQTL analysis  
 
@@ -232,4 +229,5 @@ Subset from BED and plink files
 ### 3. Make sure the samples are in the same order in both files
 
 ### 4. Inverse normal transformation of expression data  
+[rnt_transformation_exp.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/rnt_transformation_exp.R)
 
