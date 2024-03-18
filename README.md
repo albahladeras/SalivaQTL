@@ -120,7 +120,7 @@ plink
   --make-bed \
   --out all_chr_imputed_rsq09_maf001_hwe005
 ```
-4. Remove sexual chromosomes
+4. Remove sex chromosomes
 ```
 plink \
   --bfile all_chr_imputed_rsq09_maf001_hwe005 \
