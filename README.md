@@ -168,16 +168,16 @@ Subset from BED and plink files
 ### 4. Inverse normal transformation of methylation data  
 [rnt_methylation.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/rnt_methylation.R)  
 ### 5. Prepare covariates file  
-  -5 genetic principal components. [pc_air_pc_relate.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/pc_air_pc_relate.R)  
-  -Age  
-  -Sex  
-  -20 Metilation principal components  
+  #### 5 genetic principal components.  
+  [pc_air_pc_relate.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/pc_air_pc_relate.R)  
+  #### Age  
+  #### Sex  
+  #### 20 Metilation principal components  
       -1. Multiple linear regression with the methylation values as the outcome, and the known confounders as predictors.[pca_residuals_methylation.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/pca_residuals_methylation.R)  
       -2. PCA with the residuals.[pca_residuals_methylation.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/pca_residuals_methylation.R)  
-      -3. Remove methylation PCs associated with the genotype.      
-  -Genetic Relatedness Matrix. [pc_air_pc_relate.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/pc_air_pc_relate.R)
-
-
+      -3. Remove methylation PCs associated with the genotype.[gwas_mpcs.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/gwas_mpcs.R)  
+  #### Genetic Relatedness Matrix.  
+  [pc_air_pc_relate.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/pc_air_pc_relate.R)
 
 ## Quality control of expression data
 
