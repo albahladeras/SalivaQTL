@@ -172,9 +172,9 @@ Subset from BED and plink files
   -Age  
   -Sex  
   -20 Metilation principal components  
-    -1. Multiple linear regression with the methylation values as the outcome, and the known confounders as predictors.[pca_residuals_methylation.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/pca_residuals_methylation.R)  
-    -2. PCA with the residuals.[pca_residuals_methylation.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/pca_residuals_methylation.R)  
-    -3. Remove methylation PCs associated with the genotype.      
+      -1. Multiple linear regression with the methylation values as the outcome, and the known confounders as predictors.[pca_residuals_methylation.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/pca_residuals_methylation.R)  
+      -2. PCA with the residuals.[pca_residuals_methylation.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/pca_residuals_methylation.R)  
+      -3. Remove methylation PCs associated with the genotype.      
   -Genetic Relatedness Matrix. [pc_air_pc_relate.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/pc_air_pc_relate.R)
 
 
