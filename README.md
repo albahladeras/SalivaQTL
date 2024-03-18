@@ -237,7 +237,7 @@ Subset from BED and plink files
   #### Age  
   #### Sex  
   #### Date of RNA-seq
-  #### 45 PEER factors 
+  #### 30 PEER factors 
   1. Multiple linear regression with the methylation values as the outcome, and the known confounders as predictors.  
   [pca_residuals_methylation.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/pca_residuals_methylation.R)  
   2. PCA with the residuals.  
