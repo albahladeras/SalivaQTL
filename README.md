@@ -239,7 +239,6 @@ Subset from BED and plink files
   #### Date of RNA-seq
   #### 30 PEER factors 
   [peer_calculation.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/peer_calculation.R)
-  [gwas_mpcs.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/gwas_mpcs.R) 
   #### Genetic Relatedness Matrix.  
   Execute the [pc_air_pc_relate.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/pc_air_pc_relate.R) script using the genotype data of samples for which expression data is available.  
 
