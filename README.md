@@ -210,6 +210,16 @@ We used STAR (Spliced Transcripts Alignment to a Reference) software and UCSC hg
 
 ### 4. Sample and gene filtering
 -Samples with more than 5M uniquely mapped reads were selected.  
--Genes with ≥ 6 reads in ≥ 20% of samples were selected.
--Expression values for each gene were inverse normal transformed across samples
+-Genes with ≥ 6 reads in ≥ 20% of samples were selected.  
+
+## Prepare files for eQTL analysis  
+
+### 1. Create BED File (columns: chr, start, end, gene_id, sample_1...sample_n)
+
+### 2. Make sure the same samples are present in the expression and genotype files
+Subset from BED and plink files  
+
+### 3. Make sure the samples are in the same order in both files
+
+### 4. Inverse normal transformation of expression data  
 
