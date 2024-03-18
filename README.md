@@ -127,7 +127,7 @@ plink \
   --chr 1-22 \
   --keep-allele-order \
   --make-bed \
-  --out all_chr_imputed_rsq09_maf001_hwe005_chr1_22
+  --out imputed_rsq09_maf001_hwe005_chr1_22
 ```
 
 ## Methylation data 
@@ -167,7 +167,8 @@ Subset from BED and plink files
 
 ### 4. Inverse normal transformation of methylation data  
 [rnt_methylation.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/rnt_methylation.R)  
-### 5. Prepare covariates file  
+
+### 5. Covariates 
   #### 5 genetic principal components.  
   [pc_air_pc_relate.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/pc_air_pc_relate.R)  
   #### Age  
@@ -178,10 +179,23 @@ Subset from BED and plink files
   2. PCA with the residuals.  
   [pca_residuals_methylation.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/pca_residuals_methylation.R)  
   3. Remove methylation PCs associated with the genotype.  
-  [gwas_mpcs.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/gwas_mpcs.R)  
-      
+  [gwas_mpcs.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/gwas_mpcs.R) 
   #### Genetic Relatedness Matrix.  
   [pc_air_pc_relate.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/pc_air_pc_relate.R)
+
+### 6. Run Linear mixed model using [Apex](https://github.com/corbinq/apex?tab=readme-ov-file)  
+Genotype and bed file must be indexed
+```
+apex cis \
+--vcf imputed_samples_rsq09_maf001_hwe005_chr1_22.vcf.gz \
+--bed bed_sorted.bed.gz \
+--cov covariates.txt \
+--kin kinship.txt \
+--window 1000000 \
+--threads 16 \
+--long \
+--prefix MQTL_LMM
+```
 
 ## Quality control of expression data
 
