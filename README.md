@@ -168,17 +168,14 @@ Subset from BED and plink files
 ### 4. Inverse normal transformation of methylation data
 [rnt_methylation.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/rnt_methylation.R)
 ### 5. Prepare covariates file
-  -5 genetic principal components  
+  -5 genetic principal components. [pc_air_pc_relate.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/pc_air_pc_relate.R)
   -Age  
   -Sex  
-  -Metilation principal components  
-  -Genetic Relatedness Matrix  
-
-#### Calculate the genetic principal components and the genetic relatedness matrix
-[pc_air_pc_relate.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/pc_air_pc_relate.R)
-
-
-  
+  -20 Metilation principal components  
+    -1. Multiple linear regression with the methylation values as the outcome, and the known confounders as predictors.  
+    -2. PCA with the residuals.
+    -3. Remove methylation PCs associated with the genotype.
+  -Genetic Relatedness Matrix. [pc_air_pc_relate.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/pc_air_pc_relate.R)
 
 
 
