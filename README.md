@@ -231,3 +231,19 @@ Subset from BED and plink files
 ### 4. Inverse normal transformation of expression data  
 [rnt_transformation_exp.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/rnt_transformation_exp.R)
 
+### 5. Covariates 
+  #### 5 genetic principal components.  
+  Execute the [pc_air_pc_relate.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/pc_air_pc_relate.R) script using the genotype data of samples for which expression data is available.  
+  #### Age  
+  #### Sex  
+  #### Date of RNA-seq
+  #### 45 PEER factors 
+  1. Multiple linear regression with the methylation values as the outcome, and the known confounders as predictors.  
+  [pca_residuals_methylation.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/pca_residuals_methylation.R)  
+  2. PCA with the residuals.  
+  [pca_residuals_methylation.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/pca_residuals_methylation.R)  
+  3. Remove methylation PCs associated with the genotype.  
+  [gwas_mpcs.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/gwas_mpcs.R) 
+  #### Genetic Relatedness Matrix.  
+  [pc_air_pc_relate.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/pc_air_pc_relate.R)
+
