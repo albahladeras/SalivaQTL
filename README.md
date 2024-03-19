@@ -187,7 +187,7 @@ Subset from BED and plink files
 Genotype and bed file must be indexed
 ```
 apex cis \
---vcf imputed_samples_rsq09_maf001_hwe005_chr1_22.vcf.gz \
+--vcf imputed_rsq09_maf001_hwe005_chr1_22_common_methyl.vcf.gz \
 --bed bed_sorted.bed.gz \
 --cov covariates.txt \
 --kin kinship.txt \
@@ -246,7 +246,7 @@ Subset from BED and plink files
 Genotype and bed file must be indexed
 ```
 apex cis \
---vcf imputed_samples_rsq09_maf001_hwe005_chr1_22.vcf.gz \
+--vcf imputed_rsq09_maf001_hwe005_chr1_22_common_exp.vcf.gz \
 --bed bed_sorted.bed.gz \
 --cov covariates.txt \
 --kin kinship.txt \
