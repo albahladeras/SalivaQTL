@@ -241,4 +241,19 @@ Subset from BED and plink files
   [peer_calculation.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/peer_calculation.R)
   #### Genetic Relatedness Matrix.  
   Execute the [pc_air_pc_relate.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/pc_air_pc_relate.R) script using the genotype data of samples for which expression data is available.  
+  
+### 6. Run Linear mixed model using [Apex](https://github.com/corbinq/apex?tab=readme-ov-file)  
+Genotype and bed file must be indexed
+```
+apex cis \
+--vcf imputed_samples_rsq09_maf001_hwe005_chr1_22.vcf.gz \
+--bed bed_sorted.bed.gz \
+--cov covariates.txt \
+--kin kinship.txt \
+--window 1000000 \
+--threads 16 \
+--long \
+--prefix EQTL_LMM
+```
+
 
