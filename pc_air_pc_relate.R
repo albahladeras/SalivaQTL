@@ -11,9 +11,9 @@ library(ggplot2)
 # The SNPRelate package provides the snpgdsBED2GDS function to convert binary 
 # PLINK files into a GDS file.
 
-gdsfile <- snpgdsBED2GDS(bed.fn = "../all_chr_imputed_rsq09_maf001_hwe005_chr1_22_common_methyl.bed", 
-                         bim.fn = "../all_chr_imputed_rsq09_maf001_hwe005_chr1_22_common_methyl.bim",
-                         fam.fn = "../all_chr_imputed_rsq09_maf001_hwe005_chr1_22_common_methyl.fam",
+gdsfile <- snpgdsBED2GDS(bed.fn = "../imputed_rsq09_maf001_hwe005_chr1_22_common_methyl.bed", 
+                         bim.fn = "../imputed_rsq09_maf001_hwe005_chr1_22_common_methyl.bim",
+                         fam.fn = "../imputed_rsq09_maf001_hwe005_chr1_22_common_methyl.fam",
                          out.gdsfn = "genotype.gds")
 
 # read in GDS data
