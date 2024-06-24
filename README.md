@@ -255,13 +255,22 @@ apex cis \
 --long \
 --prefix EQTL_LMM
 ```
-## Prepare files for eQTM analysis  
+## eQTM analysis  
 To perform the [eQTM analyses](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/matrixeqtl.R), we adapted a script developed by Corina Lesseur that utilizes [MatrixeQTL](https://github.com/andreyshabalin/MatrixEQTL) R package. MatrixeQTL was designed to perform linear regressions between genotype and expression data. In our case, we substituted the genotype data with methylation data, and we applied the following model:
 
 ```
 gene expression ~ methylation + sex + age + time of RNA-seq + 5gPCs + 20mPCs + 30 expression PEER factors + genetic relatedness matrix
 transcript expression ~ methylation + sex + age + time of RNA-seq + 5gPCs + 20mPCs + 30 expression PEER factors + genetic relatedness matrix
 ```
+## Summary-based Mendelian Randomization analyses 
 
+### 1. Converting cis-m/eQTL data to BESD format.
+We constructed a txt file in fastqtl format. According to the [SMR webpage](https://yanglab.westlake.edu.cn/software/smr/#MakeaBESDfile) this file has no header and contains five columns: gene/CpG site, SNP, distance in bp between the SNP and the gene/CpG, p-value and beta (i.e. SNP effect on gene expression/CpG methylation). We then executed the following command to obtain the BESD format:
+
+```
+smr --eqtl-summary fastqtlnomi.txt --fastqtl-nominal-format --make-besd --out mybesd
+```
+### 2. Updating BESD files
+As it is described by the developers, The SNP and probe information in the SMR output files (.esi and .epi) converted from FastQTL output are not complete and need to be updated using the options in Update a BESD file.
 
 
