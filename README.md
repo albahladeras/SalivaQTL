@@ -155,7 +155,7 @@ plink \
 #### 5. Outliers treatment:  
   -Winsorization: pct = 0.005  
 
-## Prepare files for mQTL analysis  
+## mQTL analysis  
 
 ### 1. Create BED File
 [create_methylation_bedfile.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/create_methylation_bedfile.R)
@@ -219,7 +219,7 @@ We used StringTie software
 -Read counts were normalized between samples using TMM  
 [gene_sample_qc_tmm.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/gene_sample_qc_tmm.R)
 
-## Prepare files for eQTL analysis  
+## eQTL analysis 
 
 ### 1. Create BED File (columns: chr, start, end, gene_id, sample_1...sample_n)
 
@@ -256,7 +256,7 @@ apex cis \
 --prefix EQTL_LMM
 ```
 ## Prepare files for eQTM analysis  
-We performed the eQTM analyses at gene and transcript level. We adapted a script developed by Corina Lesseur that uses [MatrixeQTL](https://github.com/andreyshabalin/MatrixEQTL) R package. MatrixeQTL was developed to perform linear regressions between genotype and expression data. In our case, we have substituted genotype data by methylation data, so we applied the following model:
+To perform the [eQTM analyses](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/matrixeqtl.R), we adapted a script developed by Corina Lesseur that utilizes [MatrixeQTL](https://github.com/andreyshabalin/MatrixEQTL) R package. MatrixeQTL was designed to perform linear regressions between genotype and expression data. In our case, we substituted the genotype data with methylation data, and we applied the following model:
 
 ```
 gene expression ~ methylation + sex + age + time of RNA-seq + 5gPCs + 20mPCs + 30 expression PEER factors + genetic relatedness matrix
