@@ -280,7 +280,7 @@ smr --beqtl-summary  mybesd --update-esi mymqtl.epi
 ### 3. Run SMR with the harmonized GWAS summary statistics
 
 ```
- smr --bfile imputed_rsq09_maf001_hwe005_chr1_22_common_exp \
+ smr --bfile imputed_rsq09_maf001_hwe005_chr1_22_common_methyl \
         --gwas-summary gwas.txt \
         --beqtl-summary mybesd \
         --smr-multi \
