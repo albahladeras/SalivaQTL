@@ -277,6 +277,18 @@ As it is described by the developers, The SNP and probe information in the SMR o
 smr --beqtl-summary  mybesd --update-esi mymqtl.esi
 smr --beqtl-summary  mybesd --update-esi mymqtl.epi
 ```
+### 3. Run SMR with the harmonized GWAS summary statistics
+
+```
+ smr --bfile imputed_rsq09_maf001_hwe005_chr1_22_common_exp \
+        --gwas-summary gwas.txt \
+        --beqtl-summary mybesd \
+        --smr-multi \
+        --set-wind 500 \
+        --ld-multi-snp 0.9 \
+        --thread-num 8 \
+        --out gwas_smr_results
+```
 
 
 
