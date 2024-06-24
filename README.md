@@ -265,12 +265,18 @@ transcript expression ~ methylation + sex + age + time of RNA-seq + 5gPCs + 20mP
 ## Summary-based Mendelian Randomization analyses 
 
 ### 1. Converting cis-m/eQTL data to BESD format.
-We constructed a txt file in fastqtl format. According to the [SMR webpage](https://yanglab.westlake.edu.cn/software/smr/#MakeaBESDfile) this file has no header and contains five columns: gene/CpG site, SNP, distance in bp between the SNP and the gene/CpG, p-value and beta (i.e. SNP effect on gene expression/CpG methylation). We then executed the following command to obtain the BESD format:
+We constructed a txt file in [fastqtl format](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/fastqtl_format_for_SMR_and_epi.R). According to the [SMR webpage](https://yanglab.westlake.edu.cn/software/smr/#MakeaBESDfile) this file has no header and contains five columns: gene/CpG site, SNP, distance in bp between the SNP and the gene/CpG, p-value and beta (i.e. SNP effect on gene expression/CpG methylation). We then executed the following command to obtain the BESD format:
 
 ```
 smr --eqtl-summary fastqtlnomi.txt --fastqtl-nominal-format --make-besd --out mybesd
 ```
 ### 2. Updating BESD files
-As it is described by the developers, The SNP and probe information in the SMR output files (.esi and .epi) converted from FastQTL output are not complete and need to be updated using the options in Update a BESD file.
+As it is described by the developers, The SNP and probe information in the SMR output files (.esi and .epi) converted from FastQTL output are not complete and need to be updated using the options in Update a BESD file. We first created manually the [esi](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/create_esi.R) and [epi](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/fastqtl_format_for_SMR_and_epi.R) files and we then executed the following smr command:
+
+```
+smr --beqtl-summary  mybesd --update-esi mymqtl.esi
+smr --beqtl-summary  mybesd --update-esi mymqtl.epi
+```
+
 
 
