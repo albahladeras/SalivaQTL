@@ -255,5 +255,13 @@ apex cis \
 --long \
 --prefix EQTL_LMM
 ```
+## Prepare files for eQTM analysis  
+We performed the eQTM analyses at gene and transcript level. We adapted a script developed by Corina Lesseur that uses [MatrixeQTL](https://github.com/andreyshabalin/MatrixEQTL) R package. MatrixeQTL was developed to perform linear regressions between genotype and expression data. In our case, we have substituted genotype data by methylation data, so we applied the following model:
+
+```
+gene expression ~ methylation + sex + age + time of RNA-seq + 5gPCs + 20mPCs + 30 expression PEER factors + kinship matrix
+transcript expression ~ methylation + sex + age + time of RNA-seq + 5gPCs + 20mPCs + 30 expression PEER factors + kinship matrix
+```
+
 
 
