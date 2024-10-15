@@ -11,9 +11,9 @@ FASTQDIR="/data/exome"
 STAR \
     --runThreadN $THR \
     --runMode genomeGenerate \
-    --genomeDir '/data/resources/refgenome/ucsc_hg19/STAR_index_ensGene' \
-    --genomeFastaFiles '/data/resources/refgenome/ucsc_hg19/hg19.p13.plusMT.no_alt_analysis_set.fa' \
-    --sjdbGTFfile '/data/resources/refgenome/ucsc_hg19/hg19.ensGene.gtf' \
+    --genomeDir 'STAR_index_ensGene' \
+    --genomeFastaFiles 'hg19.p13.plusMT.no_alt_analysis_set.fa' \
+    --sjdbGTFfile 'ucsc_hg19/hg19.ensGene.gtf' \
     --sjdbOverhang 99
     
 # List of fastq.gz files found in a specific directory
@@ -22,8 +22,8 @@ FASTQS=$( find $FASTQDIR -maxdepth 2 -type f -name "*fastq.gz" -exec ls {} + )
 # Sample substrings
 SAMPLES=$( ls $FASTQS | sed 's!.*/!!' | awk '{m=split($0,a,"_L"); for(i=1;i<m;i++)printf a[i]}; {print ""}' | sort | uniq )
 
-dirA="/data/preprocess_exo/02_fastp"
-dirB="/data/preprocess_exo/03_alignment"
+dirA="02_fastp"
+dirB="03_alignment"
 
 echo $dirA
 echo $dirB
@@ -42,7 +42,7 @@ do
 
     STAR \
 	    --runThreadN $THR \
-	    --genomeDir '/data/resources/refgenome/ucsc_hg19/STAR_index_ensGene' \
+	    --genomeDir 'STAR_index_ensGene' \
 	    --readFilesIn "${dirA}/${SAMP}_R1_fastp.fastq.gz" "${dirA}/${SAMP}_R2_fastp.fastq.gz" \
 	    --readFilesCommand zcat \
 	    --outFileNamePrefix ${dirB}/${SAMP}
