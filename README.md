@@ -1,5 +1,5 @@
-# Pipeline of mQTL and eQTL analyses for the SalivaQTL project
-In this GitHub repository, you will find the protocol elaborated by the Immunogenetics Research Lab (IRLab) from the University of the Basque Country (UPV/EHU), to perform the quality control of genotype, methylation and expression data and mQTl and eQTL analyses for the SalivaQTL project.
+# A multiomic framework for identifying salivary biomarkers in common diseases 
+In this GitHub repository, you will find the codes developed by the Immunogenetics Research Lab (IRLab) from the University of the Basque Country (UPV/EHU), for the research presented in the article titled: A multiomic framework for identifying salivary biomarkers in common diseases 
 
 ## Quality control of genotype data 
 ### 1. Variant QC
