@@ -157,7 +157,7 @@ plink \
 
 ## mQTL analysis  
 
-### 1. Create BED File
+### 1. Create [BED File](https://genome.ucsc.edu/FAQ/FAQformat.html#format1)
 [create_methylation_bedfile.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/create_methylation_bedfile.R)
 
 ### 2. Make sure the same samples are present in the methylation and genotype files
