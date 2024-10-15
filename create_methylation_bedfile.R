@@ -1,4 +1,4 @@
-## Create the BED file for mQTL analysis with TensorQTL
+## Create the BED file for mQTL analysis 
 
 #Set working directory
 setwd("/data/projects/mqtl")
