@@ -237,7 +237,7 @@ Subset from BED and plink files
   #### Age  
   #### Sex  
   #### Date of RNA-seq
-  #### 30 PEER factors 
+  #### 45 PEER factors 
   [peer_calculation.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/peer_calculation.R)
   #### Genetic Relatedness Matrix.  
   Execute the [pc_air_pc_relate.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/pc_air_pc_relate.R) script using the genotype data of samples for which expression data is available.  
