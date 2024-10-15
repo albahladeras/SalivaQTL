@@ -12,8 +12,8 @@ FASTQS=$( find $FASTQDIR -maxdepth 2 -type f -name "*fastq.gz" -exec ls {} + )
 # Sample substrings
 SAMPLES=$( ls $FASTQS | sed 's!.*/!!' | awk '{m=split($0,a,"_L"); for(i=1;i<m;i++)printf a[i]}; {print ""}' | sort | uniq )
 
-dirA="/data/preprocess_exo/03_alignment"
-dirB="/data/preprocess_exo/04_quant"
+dirA="03_alignment"
+dirB="04_quant"
 
 
 for SAMP in $( echo $SAMPLES );
@@ -30,7 +30,7 @@ do
     
     stringtie \
         "${dirA}/${SAMP}_sorted.bam" \
-        -G "/data/resources/refgenome/ucsc_hg19/hg19.ensGene.gtf" \
+        -G "hg19.ensGene.gtf" \
         -e \
         -B \
         -o "${dirB}/${SAMP}_transcripts.gtf" \
