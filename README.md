@@ -262,7 +262,7 @@ To perform the [eQTM analyses](https://github.com/albahladeras/SalivaQTL_QC_geno
 gene expression ~ methylation + sex + age + time of RNA-seq + 5gPCs + 20mPCs + 45 expression PEER factors + genetic relatedness matrix
 transcript expression ~ methylation + sex + age + time of RNA-seq + 5gPCs + 20mPCs + 45 expression PEER factors + genetic relatedness matrix
 ```
-## Summary-based Mendelian Randomization analyses 
+## Multi-SNP Summary-based Mendelian Randomization (SMR) analyses 
 
 ### 1. Converting cis-m/eQTL data to BESD format.
 We constructed a txt file in [fastqtl format](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/fastqtl_format_for_SMR_and_epi.R). According to the [SMR webpage](https://yanglab.westlake.edu.cn/software/smr/#MakeaBESDfile) this file has no header and contains five columns: gene/CpG site, SNP, distance in bp between the SNP and the gene/CpG, p-value and beta (i.e. SNP effect on gene expression/CpG methylation). We then executed the following command to obtain the BESD format:
@@ -277,15 +277,13 @@ As it is described by the developers, The SNP and probe information in the SMR o
 smr --beqtl-summary  mybesd --update-esi mymqtl.esi
 smr --beqtl-summary  mybesd --update-esi mymqtl.epi
 ```
-### 3. Run SMR with the harmonized GWAS summary statistics
+### 3. Run Multi-SNP SMR with the harmonized GWAS summary statistics
 
 ```
  smr --bfile imputed_rsq09_maf001_hwe005_chr1_22_common_methyl \
         --gwas-summary gwas.txt \
         --beqtl-summary mybesd \
         --smr-multi \
-        --set-wind 500 \
-        --ld-multi-snp 0.9 \
         --thread-num 8 \
         --out gwas_smr_results
 ```
