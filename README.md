@@ -256,11 +256,11 @@ apex cis \
 --prefix EQTL_LMM
 ```
 ## eQTM analysis  
-To perform the [eQTM analyses](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/matrixeqtl.R), we adapted a script developed by Corina Lesseur that utilizes [MatrixeQTL](https://github.com/andreyshabalin/MatrixEQTL) R package. MatrixeQTL was designed to perform linear regressions between genotype and expression data. In our case, we substituted the genotype data with methylation data, and we applied the following model:
+To perform the [eQTM analyses](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/matrixeqtl.R), we adapted a script provided by Corina Lesseur that utilizes [MatrixeQTL](https://github.com/andreyshabalin/MatrixEQTL) R package. MatrixEQTL was designed to perform linear regressions between genotype and expression data. In our case, we substituted the genotype data with methylation data, and we applied the following model:
 
 ```
-gene expression ~ methylation + sex + age + time of RNA-seq + 5gPCs + 20mPCs + 30 expression PEER factors + genetic relatedness matrix
-transcript expression ~ methylation + sex + age + time of RNA-seq + 5gPCs + 20mPCs + 30 expression PEER factors + genetic relatedness matrix
+gene expression ~ methylation + sex + age + time of RNA-seq + 5gPCs + 20mPCs + 45 expression PEER factors + genetic relatedness matrix
+transcript expression ~ methylation + sex + age + time of RNA-seq + 5gPCs + 20mPCs + 45 expression PEER factors + genetic relatedness matrix
 ```
 ## Summary-based Mendelian Randomization analyses 
 
