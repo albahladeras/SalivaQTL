@@ -1,5 +1,7 @@
-# A multiomic framework for identifying salivary biomarkers in common diseases 
-In this GitHub repository, you will find the codes developed by the Immunogenetics Research Lab (IRLab) from the University of the Basque Country (UPV/EHU), for the research presented in the article titled: A multiomic framework for identifying salivary biomarkers in common diseases 
+# Saliva as diagnostic medium: DNA methylation biomarkers for disorders beyond the oral cavity
+ 
+In this GitHub repository, you will find the codes developed by the Immunogenetics Research Lab (IRLab) from the University of the Basque Country (UPV/EHU), for the research presented in the article titled: Saliva as diagnostic medium: DNA methylation biomarkers for disorders beyond the oral cavity
+
 
 ## Quality control of genotype data 
 ### 1. Variant QC
