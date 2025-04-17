@@ -1,4 +1,4 @@
-# Saliva as diagnostic medium: DNA methylation biomarkers for disorders beyond the oral cavity
+# Saliva as potential diagnostic medium: DNA methylation biomarkers for disorders beyond the oral cavity
  
 In this GitHub repository, you will find the codes developed by the Immunogenetics Research Lab (IRLab) from the University of the Basque Country (UPV/EHU), for the research presented in the article titled: Saliva as diagnostic medium: DNA methylation biomarkers for disorders beyond the oral cavity
 
@@ -289,6 +289,30 @@ smr --beqtl-summary  mybesd --update-esi mymqtl.epi
         --thread-num 8 \
         --out gwas_smr_results
 ```
+
+## Partitioning Heritability Using LDAK with mQTL and eQTL Annotations 
+
+LDAK (Linkage Disequilibrium Adjusted Kinships) is a widely used toolkit for estimating SNP heritability. Unlike S-LDSC, it accommodates realistic LD patterns and allows fine-tuned annotation models. This makes it ideal for exploring the contribution of biologically defined SNP sets (e.g., mQTLs or eQTLs) to disease risk.
+LDAK’s --sum-hers function implements the SumsHer method, which uses summary statistics from GWAS and tagging information from a reference panel to estimate how much heritability is attributable to each SNP category.
+
+Key Concepts
+    • Heritability (h²) is the proportion of phenotypic variance explained by genetic factors.
+    • Partitioned heritability assigns portions of h² to specific SNP sets (e.g., mQTLs, eQTLs).
+    • Annotation: A file labeling SNPs as belonging to a category (e.g., mQTL = 1 or 0).
+    • Tagging: LD-adjusted measure of how well SNPs in each annotation predict genome-wide variation.
+
+  #### Prepare the reference.  
+
+  #### Calculate the tagging file
+  
+  #### Run sum hers 
+  
+  #### Extract the results
+  
+  #### 45 PEER factors 
+  [peer_calculation.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/peer_calculation.R)
+  #### Genetic Relatedness Matrix.  
+  Execute the [pc_air_pc_relate.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/pc_air_pc_relate.R) script using the genotype data of samples for which expression data is available.  
 
 
 
