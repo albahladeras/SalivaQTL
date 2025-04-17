@@ -345,7 +345,7 @@ awk '{$2 = $1":"$4; print}' ref_clean.bim > temp && mv temp ref_clean.bim
 awk '{print $2}' ref_clean.bim | sort | uniq -d > duplicates.txt
 plink --bfile ref_clean --exclude duplicates.txt --make-bed --out ref_clean_no_duplicates
 
-``
+```
 
   #### Calculate the tagging file
   [calc_tagging.sh](https://github.com/albahladeras/SalivaQTL/blob/main/calc_tagging.sh)
