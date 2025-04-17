@@ -302,17 +302,10 @@ Key Concepts
     • Tagging: LD-adjusted measure of how well SNPs in each annotation predict genome-wide variation.
 
   #### Prepare the reference.  
-
+  [prepare_reference.sh](https://github.com/albahladeras/SalivaQTL/blob/main/prepare_reference.sh)
   #### Calculate the tagging file
-  
+  [calc_tagging.sh](https://github.com/albahladeras/SalivaQTL/blob/main/calc_tagging.sh)
   #### Run sum hers 
-  
+  [run_sum_hers.sh](https://github.com/albahladeras/SalivaQTL/blob/main/run_sum_hers.sh)
   #### Extract the results
-  
-  #### 45 PEER factors 
-  [peer_calculation.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/peer_calculation.R)
-  #### Genetic Relatedness Matrix.  
-  Execute the [pc_air_pc_relate.R](https://github.com/albahladeras/SalivaQTL_QC_genotype/blob/main/pc_air_pc_relate.R) script using the genotype data of samples for which expression data is available.  
-
-
-
+  [extract_results.R](https://github.com/albahladeras/SalivaQTL/blob/main/extract_results.R)
