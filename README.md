@@ -401,6 +401,6 @@ while IFS=$'\t' read -r file_name ascertainment prevalence; do
     fi
 done < "GWAS_data.txt"
 
-``
+```
   #### Extract the results
   [extract_results.R](https://github.com/albahladeras/SalivaQTL/blob/main/extract_results.R)
