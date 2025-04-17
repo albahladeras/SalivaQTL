@@ -296,10 +296,10 @@ LDAK (Linkage Disequilibrium Adjusted Kinships) is a widely used toolkit for est
 LDAK’s --sum-hers function implements the SumsHer method, which uses summary statistics from GWAS and tagging information from a reference panel to estimate how much heritability is attributable to each SNP category.
 
 Key Concepts
-    • Heritability (h²) is the proportion of phenotypic variance explained by genetic factors.
-    • Partitioned heritability assigns portions of h² to specific SNP sets (e.g., mQTLs, eQTLs).
-    • Annotation: A file labeling SNPs as belonging to a category (e.g., mQTL = 1 or 0).
-    • Tagging: LD-adjusted measure of how well SNPs in each annotation predict genome-wide variation.
+    • Heritability (h²) is the proportion of phenotypic variance explained by genetic factors. 
+    • Partitioned heritability assigns portions of h² to specific SNP sets (e.g., mQTLs, eQTLs). 
+    • Annotation: A file labeling SNPs as belonging to a category (e.g., mQTL = 1 or 0). 
+    • Tagging: LD-adjusted measure of how well SNPs in each annotation predict genome-wide variation. 
 
   #### Prepare the reference.  
   [prepare_reference.sh](https://github.com/albahladeras/SalivaQTL/blob/main/prepare_reference.sh)
