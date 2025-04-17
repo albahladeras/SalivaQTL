@@ -295,7 +295,7 @@ smr --beqtl-summary  mybesd --update-esi mymqtl.epi
 LDAK (Linkage Disequilibrium Adjusted Kinships) is a widely used toolkit for estimating SNP heritability. Unlike S-LDSC, it accommodates realistic LD patterns and allows fine-tuned annotation models. This makes it ideal for exploring the contribution of biologically defined SNP sets (e.g., mQTLs or eQTLs) to disease risk.
 LDAK’s --sum-hers function implements the SumsHer method, which uses summary statistics from GWAS and tagging information from a reference panel to estimate how much heritability is attributable to each SNP category.
 
-Key Concepts
+Key Concepts  
     • Heritability (h²) is the proportion of phenotypic variance explained by genetic factors.  
     • Partitioned heritability assigns portions of h² to specific SNP sets (e.g., mQTLs, eQTLs).  
     • Annotation: A file labeling SNPs as belonging to a category (e.g., mQTL = 1 or 0).  
@@ -349,7 +349,58 @@ plink --bfile ref_clean --exclude duplicates.txt --make-bed --out ref_clean_no_d
 
   #### Calculate the tagging file
   [calc_tagging.sh](https://github.com/albahladeras/SalivaQTL/blob/main/calc_tagging.sh)
+
+ ```
+ #!/bin/bash
+
+#run ldak to obtain weights
+ldak --cut-weights weights \
+     --bfile data/genotypes/ref_clean \
+     --window-cm 0.1 \
+     --section-cm 0.1 \
+     --no-thin DONE
+
+ldak --calc-weights-all weights \
+     --bfile data/genotypes/ref_clean \
+     --power -0.25
+
+#rename SNP-list files
+mv snps_mqtls.txt  QTL1
+mv snps_eqtls.txt  QTL2
+
+# Compute tagging files using LDAK
+ldak --calc-tagging results/saliva_tagging \
+     --bfile data/genotypes/ref_clean \
+     --weights weights/weights.all \
+     --power -0.25 \
+     --annotation-number 2 \
+     --annotation-prefix QTL
+
+  ```
   #### Run sum hers 
   [run_sum_hers.sh](https://github.com/albahladeras/SalivaQTL/blob/main/run_sum_hers.sh)
+
+  ```
+#!/bin/bash
+
+tagging_file="results/saliva_tagging.tagging"
+results_folder="results/outputs"
+
+while IFS=$'\t' read -r file_name ascertainment prevalence; do
+    [[ "$file_name" == "file_name" ]] && continue
+
+    if [[ -f "GWAS/${file_name}" ]]; then
+        ldak --sum-hers "${results_folder}/output_${file_name}" \
+             --tagfile "$tagging_file" \
+             --summary "GWAS/${file_name}" \
+             --ascertainment "$ascertainment" \
+             --prevalence "$prevalence" \
+             --check-sums NO
+    else
+        echo "File GWAS/${file_name} not found. Skipping..."
+    fi
+done < "GWAS_data.txt"
+
+``
   #### Extract the results
   [extract_results.R](https://github.com/albahladeras/SalivaQTL/blob/main/extract_results.R)
